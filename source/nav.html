@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="style.css">
+
+    <!-- Announcement Bar -->
+    <div
+        class="bg-aura-900 text-aura-100 text-xs md:text-sm py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-amberGold animate-pulse"></span>
+        <span>The content is for demonstration purposes only.</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-amberGold animate-pulse"></span>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="sticky top-0 z-40 transition-all duration-300 border-b border-aura-200/50 glass-panel">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-aura-800 text-aura-100 flex items-center justify-center font-serif text-xl font-bold group-hover:bg-aura-600 transition shadow-md">
+                        <img src="img/logo.jpg" alt="Ying Cha Logo">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-bold tracking-tight text-aura-950 leading-tight">YING CHA CAFÉ</span>
+                        <span class="text-[10px] tracking-widest uppercase text-aura-600 font-semibold">Pagbilao, Quezon</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="text-aura-800 hover:text-aura-500 transition">Our Story</a>
+                    <a href="menu.html" class="text-aura-800 hover:text-aura-500 transition">Menu</a>
+                    <a href="#reservations" class="text-aura-800 hover:text-aura-500 transition">Reservations</a>
+                    <a href="#location" class="text-aura-800 hover:text-aura-500 transition">Find Us</a>
+                </div>
+
+                <!-- Right Action Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="toggleCartModal()" class="relative p-2.5 text-aura-800 hover:text-aura-600 rounded-full hover:bg-aura-100 transition" aria-label="View Order Cart">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-amberGold text-aura-950 text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow">0</span>
+                    </button>
+                    <a href="#reservations" class="bg-aura-800 hover:bg-aura-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-md hover:shadow-lg">
+                        Reserve a Table
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="flex items-center gap-3 md:hidden">
+                    <button onclick="toggleCartModal()" class="relative p-2 text-aura-800">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="cart-badge-mobile" class="hidden absolute -top-1 -right-1 bg-amberGold text-aura-950 text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-md text-aura-800 hover:text-aura-950 hover:bg-aura-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-aura-200 bg-aura-50/98 px-4 pt-4 pb-6 space-y-3">
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-aura-900 hover:bg-aura-100">Our Story</a>
+            <a href="menu.html" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-aura-900 hover:bg-aura-100">Menu</a>
+            <a href="#reservations" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-aura-900 hover:bg-aura-100">Reservations</a>
+            <a href="#location" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-aura-900 hover:bg-aura-100">Find Us</a>
+            <div class="pt-2">
+                <a href="#reservations" onclick="toggleMobileMenu()" class="block text-center w-full bg-aura-800 text-white py-3 rounded-xl font-semibold">
+                    Reserve a Table
+                </a>
+            </div>
+        </div>
+    </nav>

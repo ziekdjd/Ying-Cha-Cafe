@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Ying Cha Café</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="include.js"></script>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aura: {
+                            50: '#F4F9F8',
+                            100: '#E4F1EE',
+                            200: '#C2E0DA',
+                            300: '#94C7BC',
+                            400: '#5F9EA0',
+                            500: '#2E8B87',
+                            600: '#1F6F6C',
+                            700: '#145351',
+                            800: '#0C3D3B',
+                            900: '#072827',
+                            950: '#041716',
+                        },
+                        amberGold: '#E2B859',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Separated Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body
+    class="bg-aura-50 text-aura-900 font-sans antialiased selection:bg-aura-300 selection:text-aura-950 flex flex-col min-h-screen">
+
+    <nav source="/source/nav.html"></nav>
+    <!-- Page Header Banner -->
+    <header class="bg-aura-900 text-white py-14 px-4 sm:px-6 lg:px-8 border-b border-aura-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <span
+                class="text-amberGold text-xs uppercase tracking-widest font-semibold bg-white/10 px-3.5 py-1.5 rounded-full border border-white/20">Handcrafted
+                & Freshly Prepared</span>
+            <h1 class="font-serif text-4xl sm:text-6xl font-bold mt-4 tracking-tight">Complete Ying Cha Menu</h1>
+            <p class="text-aura-200 max-w-2xl mx-auto mt-3 text-sm sm:text-base font-light">
+                From our Signature espresso blends, Milkteas, Frappes & Coolers to All-Day Breakfast, Rice Meals, Pasta,
+                Burgers & Ala Carte Specials.
+            </p>
+
+            <!-- Hero Search Bar -->
+            <div class="mt-8 max-w-xl mx-auto">
+                <div class="bg-white p-2 rounded-full shadow-2xl flex items-center gap-2 border border-aura-200">
+                    <div class="relative flex-1">
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-aura-400 text-sm"></i>
+                        <input type="text" id="hero-menu-search" oninput="syncAndFilterMenu(this.value)"
+                            onkeydown="if(event.key==='Enter') filterMenu()"
+                            placeholder="Search coffee, frappe, sisig, wings..."
+                            class="w-full pl-10 pr-4 py-2.5 bg-aura-50 rounded-full border-0 text-xs sm:text-sm text-aura-950 focus:outline-none focus:ring-2 focus:ring-aura-500">
+                    </div>
+                    <button onclick="filterMenu()"
+                        class="bg-aura-800 hover:bg-aura-700 text-white font-bold px-6 py-2.5 rounded-full text-xs sm:text-sm transition shadow-md flex items-center gap-2 shrink-0">
+                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                        <span>Search</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search & Category Navigation Bar -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-7 relative z-20">
+        <div
+            class="bg-white rounded-2xl shadow-xl p-4 sm:p-5 border border-aura-200 flex flex-col md:flex-row gap-4 items-center justify-between">
+            <!-- Filter Tabs -->
+            <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 no-scrollbar"
+                id="category-tabs">
+                <!-- Dynamically Populated -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Menu Items Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1">
+        <div id="category-heading" class="mb-6 pb-2 border-b border-aura-200 flex items-center justify-between">
+            <h2 id="cat-title" class="font-serif text-2xl sm:text-3xl font-bold text-aura-950">All Items</h2>
+            <span id="cat-count" class="text-xs font-semibold bg-aura-100 text-aura-800 px-3 py-1 rounded-full">0
+                Items</span>
+        </div>
+
+        <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Dynamically Rendered Cards -->
+        </div>
+
+        <div id="no-results" class="hidden text-center py-16">
+            <i class="fa-solid fa-utensils text-4xl text-aura-300 mb-3"></i>
+            <p class="text-aura-600 font-medium">No menu items match your search.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-aura-950 text-aura-200 py-10 border-t border-aura-800 mt-auto text-xs text-center">
+        <p>&copy; 2026 Ying Cha Café. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Modal Sidebar -->
+    <div id="cart-modal" class="fixed inset-0 z-50 hidden">
+        <div onclick="toggleCartModal()" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col">
+            <div class="p-6 border-b border-aura-200 flex items-center justify-between bg-aura-50">
+                <h3 class="font-serif text-xl font-bold text-aura-950">Your Ying Cha Order</h3>
+                <button onclick="toggleCartModal()" class="text-aura-500 hover:text-aura-900 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                <!-- Cart items JS output -->
+            </div>
+
+            <div class="p-6 border-t border-aura-200 bg-aura-50 space-y-4">
+                <div class="flex justify-between text-aura-600 text-sm">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">₱0.00</span>
+                </div>
+                <div class="flex justify-between text-aura-600 text-sm">
+                    <span>Est. Tax (8%)</span>
+                    <span id="cart-tax">₱0.00</span>
+                </div>
+                <div
+                    class="flex justify-between font-serif text-xl font-bold text-aura-950 pt-2 border-t border-aura-200">
+                    <span>Total</span>
+                    <span id="cart-total">₱0.00</span>
+                </div>
+                <button onclick="checkoutCart()"
+                    class="w-full bg-aura-800 hover:bg-aura-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition">
+                    Checkout Order
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast"
+        class="fixed bottom-6 right-6 z-50 hidden bg-aura-900 text-white px-5 py-3 rounded-2xl shadow-xl border border-aura-700 text-sm">
+        <span id="toast-message"></span>
+    </div>
+
+    <!-- Separated Application Logic -->
+    <script src="app.js"></script>
+    <script>includeHTML();</script>
+</body>
+
+</html>

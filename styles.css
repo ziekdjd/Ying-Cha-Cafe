@@ -1,0 +1,31 @@
+/* Custom scrollbar and sleek visual finishes */
+::-webkit-scrollbar {
+width: 8px;
+}
+::-webkit-scrollbar-track {
+background: #E4F1EE;
+}
+::-webkit-scrollbar-thumb {
+background: #94C7BC;
+border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+background: #1F6F6C;
+}
+.glass-panel {
+background: rgba(244, 249, 248, 0.92);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+}
+.hero-bg {
+background: linear-gradient(to right, rgba(4, 23, 22, 0.85), rgba(7, 40, 39, 0.55)), url('/img/background.jpg');
+background-size: cover;
+background-position: center;
+}
+.no-scrollbar::-webkit-scrollbar {
+display: none;
+}
+.no-scrollbar {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}

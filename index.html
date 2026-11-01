@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ying Cha Café</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="include.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aura: {
+                            50: '#F4F9F8',   // Light seafoam tinted off-white
+                            100: '#E4F1EE',  // Soft seafoam
+                            200: '#C2E0DA',  // Muted jade background accent
+                            300: '#94C7BC',  // Light teal accent
+                            400: '#5F9EA0',  // Cadet teal
+                            500: '#2E8B87',  // Vibrant jade teal
+                            600: '#1F6F6C',  // Medium teal
+                            700: '#145351',  // Deep teal
+                            800: '#0C3D3B',  // Dark rich teal
+                            900: '#072827',  // Night teal
+                            950: '#041716',  // Deepest teal accent
+                        },
+                        amberGold: '#E2B859', // Warm golden amber contrast accent
+                        jadeGreen: '#3CB371'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Separated Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body
+    class="bg-aura-50 text-aura-900 font-sans antialiased selection:bg-aura-300 selection:text-aura-950 flex flex-col min-h-screen">
+
+
+
+    <nav source="/source/nav.html"></nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] hero-bg flex items-center text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="max-w-2xl space-y-6">
+                <div
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium uppercase tracking-widest text-aura-100">
+                    <i class="fa-solid fa-leaf text-amberGold"></i> A Coffee & Tea Experience Crafted with Care
+                </div>
+                <h1 class="font-serif text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+                    Ying Cha Café
+                </h1>
+                <p class="text-lg md:text-xl text-aura-100 font-light leading-relaxed">
+                    It’s time to upgrade your daily sip. 🌾
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                    <a href="menu.html"
+                        class="bg-amberGold hover:bg-yellow-500 text-aura-950 font-bold px-8 py-4 rounded-full transition text-center shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                        <span>Explore Menu</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#reservations"
+                        class="border-2 border-white/40 hover:border-white hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-full transition text-center backdrop-blur-sm">
+                        Book a Tea Table
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Bottom Gradient Curve -->
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-aura-50 to-transparent"></div>
+    </section>
+
+    <!-- Highlights Banner -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+        <div
+            class="bg-white rounded-2xl shadow-xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 border border-aura-200">
+            <div class="flex items-center gap-4 p-2">
+                <div
+                    class="w-14 h-14 rounded-full bg-aura-100 text-aura-700 flex items-center justify-center text-2xl shrink-0">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-aura-950">Made with Pure Ingredients</h3>
+                    <p class="text-sm text-aura-600 mt-0.5">Ethically sourced single-origin tea leaves from Yunnan and
+                        Taiwan.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-2 border-t md:border-t-0 md:border-l border-aura-200 pt-4 md:pt-0">
+                <div
+                    class="w-14 h-14 rounded-full bg-aura-100 text-aura-700 flex items-center justify-center text-2xl shrink-0">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-aura-950">Handmade Drinks</h3>
+                    <p class="text-sm text-aura-600 mt-0.5">Artisanal beverages crafted with care and attention to detail.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-2 border-t md:border-t-0 md:border-l border-aura-200 pt-4 md:pt-0">
+                <div
+                    class="w-14 h-14 rounded-full bg-aura-100 text-aura-700 flex items-center justify-center text-2xl shrink-0">
+                    <i class="fa-solid fa-spa"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-aura-950">Comfortable Seating</h3>
+                    <p class="text-sm text-aura-600 mt-0.5">Teal aesthetics, bamboo accents, and peaceful ambient
+                        seating.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="relative">
+                <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=1000&auto=format&fit=crop"
+                        alt="Pouring tea at Ying Cha" class="w-full h-full object-cover">
+                </div>
+                <div
+                    class="absolute -bottom-6 -right-6 bg-aura-900 text-white p-6 rounded-2xl hidden sm:block max-w-xs shadow-xl border border-aura-700">
+                    <p class="font-serif text-2xl font-bold text-amberGold">Ying Cha Café</p>
+                    <p class="text-xs text-aura-100 mt-1">One cup closer to a happier day! ☕</p>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <div
+                    class="inline-block text-xs font-semibold tracking-widest text-aura-600 uppercase bg-aura-200/50 px-3 py-1 rounded-md">
+                    The Art of Ying Cha
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-aura-950 leading-tight">
+                    Honoring Tea Heritage with Modern Flair.
+                </h2>
+                <p class="text-aura-700 leading-relaxed text-base md:text-lg">
+                    "Ying Cha" (迎茶) translates to welcoming guests with fine tea. We created Ying Cha Café as a bridge
+                    between centuries-old East Asian tea ceremonies and contemporary urban café culture.
+                </p>
+                <p class="text-aura-700 leading-relaxed text-base">
+                    Whether enjoying a slow gongfu tea tasting session or catching up over espresso and steamed baos,
+                    our green teal sanctuary offers room to breathe, savor, and reconnect.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-aura-200">
+                    <div>
+                        <span class="font-serif text-3xl font-bold text-aura-900">20+</span>
+                        <p class="text-xs text-aura-600 uppercase font-medium mt-1">Rare Teas Curated</p>
+                    </div>
+                    <div>
+                        <span class="font-serif text-3xl font-bold text-aura-900">100%</span>
+                        <p class="text-xs text-aura-600 uppercase font-medium mt-1">Artisanal & Fresh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Menu Section -->
+    <section id="menu" class="py-20 bg-aura-100/60 border-y border-aura-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-aura-950">Signature Selection</h2>
+                <p class="text-aura-700 mt-3 text-base">Explore our handcrafted signature coffees and teas. Select your
+                    size and order directly for pickup.</p>
+
+                <!-- Search Bar -->
+                <div class="mt-8 flex flex-col sm:flex-row items-center gap-3">
+                    <div class="relative w-full flex gap-2">
+                        <div class="relative flex-1">
+                            <i
+                                class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-aura-400"></i>
+                            <input type="text" id="menu-search" oninput="filterMenu()"
+                                onkeydown="if(event.key==='Enter') filterMenu()"
+                                placeholder="Search mocha, matcha, tiramisu, caramel..."
+                                class="w-full pl-11 pr-4 py-3 bg-white rounded-full border border-aura-300 text-sm focus:outline-none focus:ring-2 focus:ring-aura-500">
+                        </div>
+                        <button onclick="filterMenu()"
+                            class="bg-aura-800 hover:bg-aura-700 text-white font-bold px-6 py-3 rounded-full text-sm transition shadow-md flex items-center justify-center gap-2 shrink-0">
+                            <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                            <span>Search</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="flex items-center justify-center gap-2 sm:gap-4 overflow-x-auto pb-4 mb-8 no-scrollbar"
+                id="category-tabs">
+                <button onclick="setCategory('signature')"
+                    class="cat-btn active px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap transition bg-aura-800 text-white shadow-sm">All
+                    Signatures</button>
+                <button onclick="setCategory('espresso')"
+                    class="cat-btn px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap transition bg-white text-aura-800 hover:bg-aura-200">Espresso
+                    & Mocha</button>
+                <button onclick="setCategory('fusion')"
+                    class="cat-btn px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap transition bg-white text-aura-800 hover:bg-aura-200">Specialty
+                    Fusion</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamically populated by JS -->
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="menu.html"
+                    class="inline-flex items-center gap-2 bg-aura-800 hover:bg-aura-700 text-white font-bold px-8 py-3.5 rounded-full transition shadow-lg text-sm">
+                    <span>View Complete Menu (18+ Categories)</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div id="no-results" class="hidden text-center py-12">
+                <i class="fa-solid fa-mug-hot text-4xl text-aura-300 mb-3"></i>
+                <p class="text-aura-600">No signature drinks match your search.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Reservation Section -->
+    <section id="reservations" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+            class="bg-aura-900 text-white rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 border border-aura-700">
+            <!-- Left Info Panel -->
+            <div
+                class="lg:col-span-5 p-8 lg:p-12 bg-aura-950/70 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-aura-800">
+                <div>
+                    <div class="text-amberGold text-xs font-semibold uppercase tracking-widest mb-2">Ying Cha Café Pagbilao
+                    </div>
+                    <h2 class="font-serif text-4xl lg:text-5xl font-bold text-aura-50">Reserve Your Table</h2>
+                    <p class="text-aura-200 mt-4 text-sm leading-relaxed">
+                        Reserve your spot at Ying Cha Café for a serene tea experience. Our private alcoves and intimate seating are perfect for small gatherings, celebrations, or quiet afternoons with friends.
+                    </p>
+                </div>
+                <div class="mt-8 space-y-4 text-sm text-aura-200">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-clock text-amberGold text-lg w-5"></i>
+                        <span>Reservations held for 15 minutes past scheduled time</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-fan text-amberGold text-lg w-5"></i>
+                        <span>Private tea alcoves available upon request for larger parties</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Form Panel -->
+            <div class="lg:col-span-7 p-8 lg:p-12 bg-aura-900">
+                <form id="reservation-form" onsubmit="handleReservationSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-medium uppercase tracking-wider text-aura-200 mb-2">Full
+                                Name</label>
+                            <input type="text" required placeholder="Ying Cha Café"
+                                class="w-full px-4 py-3 rounded-xl bg-aura-800 border border-aura-700 text-white placeholder-aura-400 focus:outline-none focus:ring-2 focus:ring-amberGold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium uppercase tracking-wider text-aura-200 mb-2">Email
+                                Address</label>
+                            <input type="email" required placeholder="username@example.com"
+                                class="w-full px-4 py-3 rounded-xl bg-aura-800 border border-aura-700 text-white placeholder-aura-400 focus:outline-none focus:ring-2 focus:ring-amberGold">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label
+                                class="block text-xs font-medium uppercase tracking-wider text-aura-200 mb-2">Date</label>
+                            <input type="date" id="res-date" required
+                                class="w-full px-4 py-3 rounded-xl bg-aura-800 border border-aura-700 text-white focus:outline-none focus:ring-2 focus:ring-amberGold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium uppercase tracking-wider text-aura-200 mb-2">Time
+                                Slot</label>
+                            <select id="res-time" required
+                                class="w-full px-4 py-3 rounded-xl bg-aura-800 border border-aura-700 text-white focus:outline-none focus:ring-2 focus:ring-amberGold">
+                                <option value="09:00 AM">09:00 AM</option>
+                                <option value="11:30 AM">11:30 AM</option>
+                                <option value="01:30 PM">01:30 PM</option>
+                                <option value="04:00 PM">04:00 PM</option>
+                                <option value="06:30 PM">06:30 PM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium uppercase tracking-wider text-aura-200 mb-2">Party
+                                Size</label>
+                            <select id="res-guests" required
+                                class="w-full px-4 py-3 rounded-xl bg-aura-800 border border-aura-700 text-white focus:outline-none focus:ring-2 focus:ring-amberGold">
+                                <option value="1 Guest">1 Guest</option>
+                                <option value="2 Guests" selected>2 Guests</option>
+                                <option value="4 Guests">4 Guests</option>
+                                <option value="6 Guests">6 Guests</option>
+                                <option value="8+ Guests">8+ Guests</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium uppercase tracking-wider text-aura-200 mb-2">Special
+                            Requests or Tea Preferences</label>
+                        <textarea rows="2" placeholder="A perfect coffee date..."
+                            class="w-full px-4 py-3 rounded-xl bg-aura-800 border border-aura-700 text-white placeholder-aura-400 focus:outline-none focus:ring-2 focus:ring-amberGold text-sm"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-amberGold hover:bg-yellow-500 text-aura-950 font-bold py-4 rounded-xl transition shadow-lg flex items-center justify-center gap-2 text-base">
+                        <span>Confirm Reservation</span>
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </button>
+                </form>
+
+                <!-- Confirmation Card -->
+                <div id="reservation-confirmation" class="hidden text-center py-8 space-y-4">
+                    <div
+                        class="w-16 h-16 bg-emerald-500/20 text-emerald-300 rounded-full flex items-center justify-center mx-auto text-3xl border border-emerald-500/30">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="font-serif text-3xl font-bold text-white">Table Reserved!</h3>
+                    <p class="text-aura-200 text-sm max-w-md mx-auto" id="confirmation-details"></p>
+                    <button onclick="resetReservationForm()"
+                        class="mt-4 px-6 py-2.5 bg-aura-700 hover:bg-aura-600 text-white text-xs uppercase tracking-wider font-semibold rounded-full">
+                        Make Another Reservation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="location" class="py-20 bg-aura-100/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Info Box -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-aura-200 space-y-6">
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-aura-950">Visit Ying Cha</h3>
+                        <p class="text-sm text-aura-600 mt-1">Our tranquil space in the Cultural Quarter.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-dot text-aura-600 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-aura-900 text-sm">Address</h4>
+                                <p class="text-sm text-aura-600">Gloria St. Cor Bonifacio St. Barangay Parang, Pagbilao Quezon, Pagbilao, Philippines, 4302<br>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <i class="fa-regular fa-clock text-aura-600 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-aura-900 text-sm">Ying Cha Hours</h4>
+                                <p class="text-sm text-aura-600">Everyday: 11:00 AM – 12:00 AM</p>
+                                <p class="text-sm text-aura-600">Every Thursday Only: 12:00 AM – 12:00 AM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-phone text-aura-600 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-aura-900 text-sm">Contact Us</h4>
+                                <p class="text-sm text-aura-600">0916 291 9007</p>
+                                <p class="text-sm text-aura-600">IG: @yingchacafe</p>
+                                <p class="text-sm text-aura-600">FB: Ying Cha Cafe Pagbilao</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.google.com" target="_blank"
+                        class="block text-center w-full bg-aura-100 hover:bg-aura-200 text-aura-900 font-semibold py-3 rounded-xl transition text-sm">
+                        Open Map Directions <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Interactive Map Placeholder -->
+                <div
+                    class="lg:col-span-2 bg-aura-300 rounded-3xl overflow-hidden relative shadow-sm min-h-[350px] border border-aura-200">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3871.798437910851!2d121.68114507580427!3d13.970599986444453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDU4JzE0LjIiTiAxMjHCsDQxJzAxLjQiRQ!5e0!3m2!1sen!2sph!4v1793520026747!5m2!1sen!2sph" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <div class="absolute inset-0 bg-aura-950/20"></div>
+                    <div
+                        class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-white/50 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-aura-800 text-white flex items-center justify-center font-serif text-lg">
+                                <img src="/img/logo.jpg" alt="Ying Cha Logo" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-aura-950">Ying Cha Café</p>
+                                <p class="text-xs text-aura-600">Gloria St. Cor Bonifacio St. Barangay Parang, Pagbilao Quezon, Pagbilao, Philippines, 4302</p>
+                            </div>
+                        </div>
+                        <span
+                            class="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-800 text-xs font-semibold px-2.5 py-1 rounded-full">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Open Today
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer source="/source/footer.html"></footer>
+
+    <!-- Cart / Online Order Modal Drawer -->
+    <div id="cart-modal" class="fixed inset-0 z-50 hidden">
+        <!-- Backdrop -->
+        <div onclick="toggleCartModal()" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
+        <!-- Sidebar Panel -->
+        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col">
+            <div class="p-6 border-b border-aura-200 flex items-center justify-between bg-aura-50">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-aura-700"></i>
+                    <h3 class="font-serif text-xl font-bold text-aura-950">Your Ying Cha Order</h3>
+                </div>
+                <button onclick="toggleCartModal()" class="text-aura-500 hover:text-aura-900 p-2 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Cart Items Container -->
+            <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                <!-- Dynamically filled -->
+            </div>
+
+            <!-- Cart Footer -->
+            <div class="p-6 border-t border-aura-200 bg-aura-50 space-y-4">
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between text-aura-600">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal">₱0.00</span>
+                    </div>
+                    <div class="flex justify-between text-aura-600">
+                        <span>Est. Tax (8%)</span>
+                        <span id="cart-tax">₱0.00</span>
+                    </div>
+                    <div
+                        class="flex justify-between font-serif text-xl font-bold text-aura-950 pt-2 border-t border-aura-200">
+                        <span>Total</span>
+                        <span id="cart-total">₱0.00</span>
+                    </div>
+                </div>
+
+                <button onclick="checkoutCart()"
+                    class="w-full bg-aura-800 hover:bg-aura-700 text-white font-bold py-3.5 rounded-xl transition shadow-lg flex items-center justify-center gap-2">
+                    <span>Proceed to Pickup Checkout</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast"
+        class="fixed bottom-6 right-6 z-50 hidden bg-aura-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-aura-700 transition-all transform translate-y-4">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-amberGold"></i>
+        <span id="toast-message" class="text-sm font-medium">Item added to your order</span>
+    </div>
+
+    <!-- Separated Application Logic -->
+    <script src="app.js"></script>
+    <script>includeHTML();</script>
+</body>
+
+</html>
